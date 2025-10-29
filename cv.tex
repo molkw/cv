@@ -1,0 +1,240 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,11pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{7pt}{7pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[2.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+    }
+    {
+    \end{itemize}
+    \end{minipage}
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[2.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+    }
+    {
+    \end{itemize}
+    \end{minipage}    
+    }
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Mohamed Rami BRICK} \\[5pt]
+\vspace{3pt}
+\href{https://github.com/Rami-Brick}{\raisebox{-0.05\height}\faGithub\ Rami-Brick} \ $|$ \ 
+\href{https://linkedin.com/in/mohamed-rami-brick-b06484233}{\raisebox{-0.05\height}\faLinkedin\ Mohamed Rami Brick} \ $|$ \ 
+% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
+\href{brickrami1@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ brickrami1@gmail.com} \ $|$ \ 
+\href{tel:+216.58.228.859}{\raisebox{-0.05\height}\faMobile \ +216.58.228.859} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+\vspace{12pt}
+%Interests/ Keywords/ Summary
+\section{Summary}
+Software engineer with hands-on experience in DevOps practices and full-stack development. Skilled in collaborative development environments with a proactive approach to problem-solving. Eager to leverage my development and DevOps expertise to contribute to innovative teams building scalable, efficient software solutions.
+
+\vspace{4pt}
+%Experience
+\section{Work Experience}
+
+\begin{jobshort}{Software Engineering Internship | Fingenesis | Singapore}{Jan 2025 - Jul 2025}
+\item Developed an infrastructure command center web app using FastAPI and React for monitoring and automating operations.
+\item Built visual workflows, GitLab control panel, and MLOps dashboards. Deployed the application using CI/CD pipeline with Docker, Kubernetes, and AWS ECR.
+\end{jobshort}
+
+\begin{jobshort}{Engineering Internship | Diva-software | Tunisia}{Jul 2024 - Sep 2024}
+\item Developed an admin dashboard for a nursery school using Laravel and Filament.
+\item Collaborated with staff to ease administrative tasks and used Git for efficient version control and code management.
+\end{jobshort}
+
+\begin{jobshort}{Company Immersion Internship | Proxym-It | Tunisia}{Jul 2023 - Aug 2023}
+\item Learned MERN stack fundamentals (MongoDB, Express.js, React, Node.js) and developed a login interface with advanced frontend.
+\end{jobshort}
+
+\begin{jobshort}{End-of-Studies Internship | Hutchinson | Tunisia}{Feb 2022 - Jun 2022}
+\item Improved data acquisition and storage processes to enhance production supervision and efficiency for the ePartboard solution.
+\end{jobshort}
+  
+%Projects
+\section{Projects}
+
+\begin{jobshort}{Infra App}{}
+\item Built an infrastructure command center using FastAPI and React to automate deployment workflows, monitor GitLab repositories, and track ML model performance metrics.
+\end{jobshort}
+
+\vspace{-4pt}
+
+\begin{jobshort}{Complexe-Dhouha}{}
+\item Created an interface for a nursery school to facilitate their administrative tasks and management.
+\end{jobshort}
+
+\vspace{-8pt}
+
+\begin{jobshort}{Sportify}{}
+\item Created a platform for booking sports facilities (Football fields, tennis courts etc ...)
+\end{jobshort}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2022 - 2025 & Software Engineer at \textbf{Esprit school of engineering} \\
+
+2019 - 2022 & Bachelor's Degree in Embedded Systems at \textbf{ISSAT Sousse} \\ 
+
+2015 - 2019 &  Baccalaureate at \textbf{Secondary high school Hammam Sousse 1, Tunisia} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Technical Skills & \normalsize{GitLab CI/CD, Docker, Kubernetes, MERN Stack, FastAPI, Laravel, Git}\\
+Languages & \normalsize{English (fluent), French (fluent), Arabic (native), Spanish (basic)}\\
+Strengths & \normalsize{Effective Communicator, Fast Learner, Adaptive, Challenge-Oriented}\\
+Awards/Activities & \normalsize{\href{https://drive.google.com/file/d/16UhAiNxRB6kH4zVj_1JtAkfX1AmlOMHL/view}{Participated in the 2023 bal de projet and reached the final stage}}\\
+\end{tabularx}
+
+
+\end{document}

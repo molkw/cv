@@ -1,0 +1,14 @@
+# Ignore all files
+*
+
+# Allow traversal into directories so we can unignore files within them
+!*/
+
+# Keep TeX and PDF files anywhere in the repo
+!*.tex
+!*.pdf
+!**/*.tex
+!**/*.pdf
+
+# Keep this .gitignore file
+!.gitignore
