@@ -25,80 +25,39 @@
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
 
-% article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,11pt]{article}
-
-%----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
+\usepackage{parskip}
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-%tabularx environment
+\usepackage[scale=0.92]{geometry}
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 \usepackage{supertabular}
 \usepackage{tabularx}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{7pt}{7pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-%for social icons
 \usepackage{fontawesome5}
 
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
+%----------------------------------------------------------------------------------------
+%	JOB LISTING ENVIRONMENTS
+%----------------------------------------------------------------------------------------
 \newenvironment{jobshort}[2]
     {
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
@@ -122,119 +81,85 @@
     }
     {
     \end{itemize}
-    \end{minipage}    
+    \end{minipage}
     }
-
-
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-
-% non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
-
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Mohamed Rami BRICK} \\[5pt]
-\vspace{3pt}
-\href{https://github.com/Rami-Brick}{\raisebox{-0.05\height}\faGithub\ Rami-Brick} \ $|$ \ 
-\href{https://linkedin.com/in/mohamed-rami-brick-b06484233}{\raisebox{-0.05\height}\faLinkedin\ Mohamed Rami Brick} \ $|$ \ 
-% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{brickrami1@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ brickrami1@gmail.com} \ $|$ \ 
-\href{tel:+216.58.228.859}{\raisebox{-0.05\height}\faMobile \ +216.58.228.859} \\
+\Huge{Molka GHAMMAM} \\[3pt]
+{\large Software Engineer | Backend Node.js} \\[5pt]
+\vspace{2pt}
+\href{https://github.com/molkw}{\raisebox{-0.05\height}\faGithub\ Molka-Ghammam} \ $|$ \
+\href{https://www.linkedin.com/in/molka-ghammam-560015226}{\raisebox{-0.05\height}\faLinkedin\ Molka Ghammam} \ $|$ \
+\href{mailto:ghammammolka185@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ ghammammolka185@gmail.com} \ $|$ \
+\href{tel:+216.51.389.023}{\raisebox{-0.05\height}\faMobile\ +216.51.389.023} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 \vspace{12pt}
-%Interests/ Keywords/ Summary
 \section{Summary}
-Software engineer with hands-on experience in DevOps practices and full-stack development. Skilled in collaborative development environments with a proactive approach to problem-solving. Eager to leverage my development and DevOps expertise to contribute to innovative teams building scalable, efficient software solutions.
+Junior software engineer with hands-on experience building backend services with Node.js and Express, designing MongoDB data models, and integrating secure application services. Comfortable working across full-stack products, from server-side logic and REST APIs to the React.js interfaces that consume them. Looking to contribute to a backend engineering team building reliable, scalable services with strong product impact.
 
-\vspace{4pt}
-%Experience
 \section{Work Experience}
 
-\begin{jobshort}{Software Engineering Internship | Fingenesis | Singapore}{Jan 2025 - Jul 2025}
-\item Developed an infrastructure command center web app using FastAPI and React for monitoring and automating operations.
-\item Built visual workflows, GitLab control panel, and MLOps dashboards. Deployed the application using CI/CD pipeline with Docker, Kubernetes, and AWS ECR.
+\begin{jobshort}{End-of-Studies Internship | Tritux Group | Tunis}{Feb 2025 - Aug 2025}
+\item Designed the backend layer of an AI-powered documentation assistant, coordinating code analysis services and generation workflows.
+\item Implemented secure endpoints for Markdown export, interactive Q\&A, and contextual project processing, while supporting the plugin-side user experience.
 \end{jobshort}
 
-\begin{jobshort}{Engineering Internship | Diva-software | Tunisia}{Jul 2024 - Sep 2024}
-\item Developed an admin dashboard for a nursery school using Laravel and Filament.
-\item Collaborated with staff to ease administrative tasks and used Git for efficient version control and code management.
+\begin{jobshort}{Engineering Internship | Wind Consulting | Mahdia}{Jul 2024 - Aug 2024}
+\item Built the Node.js/Express backend for ``Handmade'', an e-commerce platform handling catalog management, orders, user accounts, and core business logic.
+\item Designed MongoDB schemas, exposed REST APIs, implemented JWT authentication, and contributed to the React.js frontend connected to those services.
 \end{jobshort}
 
-\begin{jobshort}{Company Immersion Internship | Proxym-It | Tunisia}{Jul 2023 - Aug 2023}
-\item Learned MERN stack fundamentals (MongoDB, Express.js, React, Node.js) and developed a login interface with advanced frontend.
+\begin{jobshort}{Company Immersion Internship | BH Bank | Mahdia}{Jul 2023 - Aug 2023}
+\item Gained practical understanding of critical business flows, security constraints, and reliability requirements in a banking environment.
+\item Strengthened problem-solving skills through exposure to sensitive processing, traceability, and operational control workflows.
 \end{jobshort}
 
-\begin{jobshort}{End-of-Studies Internship | Hutchinson | Tunisia}{Feb 2022 - Jun 2022}
-\item Improved data acquisition and storage processes to enhance production supervision and efficiency for the ePartboard solution.
-\end{jobshort}
-  
-%Projects
 \section{Projects}
 
-\begin{jobshort}{Infra App}{}
-\item Built an infrastructure command center using FastAPI and React to automate deployment workflows, monitor GitLab repositories, and track ML model performance metrics.
+\begin{jobshort}{Handmade}{}
+\item Built a full-stack e-commerce platform with a Node.js/Express backend, MongoDB, JWT authentication, and a React.js frontend for catalog, order, and user account management.
 \end{jobshort}
-
-\vspace{-4pt}
-
-\begin{jobshort}{Complexe-Dhouha}{}
-\item Created an interface for a nursery school to facilitate their administrative tasks and management.
+\vspace{-1pt}
+\begin{jobshort}{MediColGes}{}
+\item Developed a hospital management platform with a Node.js/Express backend, MongoDB, role-based access, JWT authentication, and business-facing interfaces for operational data workflows.
 \end{jobshort}
-
-\vspace{-8pt}
-
-\begin{jobshort}{Sportify}{}
-\item Created a platform for booking sports facilities (Football fields, tennis courts etc ...)
+\vspace{-1pt}
+\begin{jobshort}{CodeScribe}{}
+\item Designed backend services for contextual code analysis, documentation generation, and interactive Q\&A, integrated directly into the plugin interface.
 \end{jobshort}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
+\vspace{-8pt}
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2022 - 2025 & Software Engineer at \textbf{Esprit school of engineering} \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2020 - 2025 & Engineering Degree in Computer Science at \textbf{Esprit School of Engineering} \\
 
-2019 - 2022 & Bachelor's Degree in Embedded Systems at \textbf{ISSAT Sousse} \\ 
-
-2015 - 2019 &  Baccalaureate at \textbf{Secondary high school Hammam Sousse 1, Tunisia} \\
+2016 - 2020 & High School Diploma at \textbf{Rejiche Secondary School, Mahdia, Tunisia} \\
 \end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-% \section{Publications}
-% \begin{refsection}[citations.bib]
-% \nocite{*}
-% \printbibliography[heading=none]
-% \end{refsection}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Technical Skills & \normalsize{GitLab CI/CD, Docker, Kubernetes, MERN Stack, FastAPI, Laravel, Git}\\
-Languages & \normalsize{English (fluent), French (fluent), Arabic (native), Spanish (basic)}\\
-Strengths & \normalsize{Effective Communicator, Fast Learner, Adaptive, Challenge-Oriented}\\
-Awards/Activities & \normalsize{\href{https://drive.google.com/file/d/16UhAiNxRB6kH4zVj_1JtAkfX1AmlOMHL/view}{Participated in the 2023 bal de projet and reached the final stage}}\\
+Technical Skills & \normalsize{Node.js, Express.js, MongoDB, REST APIs, JWT, OAuth 2.0, React.js, Git, MERN Stack, HTML/CSS}\\
+Languages & \normalsize{English (fluent), French (fluent), Arabic (native)}\\
+Strengths & \normalsize{Problem solving, attention to detail, teamwork, communication}\\
 \end{tabularx}
-
 
 \end{document}
