@@ -81,15 +81,10 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{7pt}{7pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -146,12 +141,13 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Molka GHAMMAM} \\[5pt]
-\vspace{3pt}
+\Huge{Molka GHAMMAM} \\[3pt]
+{\large Ing\'enieure logicielle | Frontend React.js} \\[5pt]
+\vspace{2pt}
 \href{https://github.com/molkw}{\raisebox{-0.05\height}\faGithub\ Molka-Ghammam} \ $|$ \ 
 \href{https://www.linkedin.com/in/molka-ghammam-560015226}{\raisebox{-0.05\height}\faLinkedin\ Molka Ghammam} \ $|$ \ 
 % \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{ghammammolka185@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ ghammammolka185@gmail.com} \ $|$ \ 
+\href{mailto:ghammammolka185@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ ghammammolka185@gmail.com} \ $|$ \ 
 \href{tel:+216.51.389.023}{\raisebox{-0.05\height}\faMobile \ +216.51.389.023} \\
 \end{tabularx}
 
@@ -161,39 +157,38 @@
 \vspace{12pt}
 %Interests/ Keywords/ Summary
 \section{Résumé}
-Ingénieure logicielle diplômée avec un background en finance et business. Expérience confirmée chez Tritux Group où j'ai développé un plugin IntelliJ IDEA intégrant l'intelligence artificielle. Reconnue pour mes compétences en leadership, ma capacité à mener des projets complexes et mon excellence académique. Dotée de solides aptitudes en communication et travail d'équipe, je recherche un poste où allier expertise technique et compréhension des enjeux métier.
+Ingénieure logicielle junior orientée frontend, avec une expérience pratique dans le développement d'interfaces web en React.js et de produits fullstack. Habituée à transformer des besoins métier en fonctionnalités concrètes, à connecter des interfaces à des services backend et à collaborer avec Git. Je recherche un poste Frontend Developer où contribuer à des applications performantes, responsives et centrées utilisateur.
 
 %Experience
 \section{Expérience Professionnelle}
 
-\begin{jobshort}{Stage PFE | Tritux Group | Tunis}{Fév 2025 - Aoû 2025}
-\item Développer un plugin IntelliJ IDEA basé sur l'IA pour la génération automatique de documentation de projets, facilitant la reprise et la compréhension du code.
-\item Implémenter des fonctionnalités avancées incluant l'export Markdown, un système de Q\&A interactif et l'analyse contextuelle de projets existants.
+\begin{jobshort}{Stage PFE | Tritux Group | Tunis}{Fév 2025 - Août 2025}
+\item Concevoir et développer un plugin IntelliJ IDEA orienté expérience utilisateur pour la génération automatique de documentation et l'exploration de code.
+\item Implémenter des fonctionnalités produit incluant l'export Markdown, un système de Q\&A interactif et l'analyse contextuelle de projets existants.
 \end{jobshort}
 
-\begin{jobshort}{Stage Ingénieur | Wind Consulting | Mahdia}{Juil 2024 - Aoû 2024}
-\item Développer une plateforme e-commerce fullstack 'Handmade' avec gestion de catalogue produits et système de commandes pour la promotion de l'artisanat tunisien.
-\item Concevoir et implémenter l'architecture complète (frontend/backend) utilisant la stack MERN (MongoDB, Express.js, React.js, Node.js) avec Sequelize pour la gestion de base de données.
+\begin{jobshort}{Stage Ingénieur | Wind Consulting | Mahdia}{Juil 2024 - Août 2024}
+\item Développer la plateforme e-commerce fullstack ``Handmade'' avec un frontend React.js, la gestion du catalogue produits et le parcours de commande.
+\item Concevoir l'architecture complète avec la stack MERN, connecter le frontend au backend via des API REST et contribuer au suivi du code avec Git.
 \end{jobshort}
 
-\begin{jobshort}{Stage d'Immersion en entreprise | BH Bank | Mahdia}{Juil 2023 - Aoû 2023}
-\item Acquérir une expérience pratique des opérations bancaires (gestion de comptes, transactions, bulletins de versement, traitement de chèques) et des processus métier du secteur financier.
-\item Développer une compréhension approfondie des flux bancaires et des exigences réglementaires, compétences essentielles pour concevoir des solutions IT adaptées aux besoins du secteur financier.
+\begin{jobshort}{Stage d'Immersion en entreprise | BH Bank | Mahdia}{Juil 2023 - Août 2023}
+\item Développer une compréhension concrète des parcours utilisateurs, des flux métier et des exigences de fiabilité dans un environnement bancaire.
 \end{jobshort}
 
 %Projects
 \section{Projets}
 
-\begin{jobshort}{CodeScribe}{}
-\item Développé un plugin IntelliJ IDEA basé sur l'IA pour la génération automatique de documentation, l'analyse de code contextuelle et un système de Q\&A interactif facilitant la collaboration en équipe.
-\end{jobshort}
-\vspace{-1pt}
 \begin{jobshort}{Handmade}{}
-\item Développé une plateforme e-commerce fullstack pour la promotion de l'artisanat tunisien avec gestion de catalogue produits et système de commandes utilisant la stack MERN.
+\item Développer une plateforme e-commerce avec React.js pour la consultation de produits, la gestion des commandes et l'intégration avec le backend MERN.
 \end{jobshort}
 \vspace{-1pt}
 \begin{jobshort}{MediColGes}{}
-\item Développé une plateforme de gestion hospitalière avec la stack MERN et pratiques DevOps, \href{https://drive.google.com/file/d/1gWNv6cd-rV3e9UC0t1IIyUFB63efAkBR/view}{sélectionné comme meilleur projet par le client algérien pour son innovation}.
+\item Développer une plateforme de gestion hospitalière avec interfaces métier, stack MERN et pratiques DevOps, \href{https://drive.google.com/file/d/1gWNv6cd-rV3e9UC0t1IIyUFB63efAkBR/view}{distinguée par le client algérien pour son innovation}.
+\end{jobshort}
+\vspace{-1pt}
+\begin{jobshort}{CodeScribe}{}
+\item Développer un plugin IntelliJ IDEA basé sur l'IA pour la génération automatique de documentation, l'analyse contextuelle du code et un Q\&A interactif facilitant la collaboration.
 \end{jobshort}
 
 %----------------------------------------------------------------------------------------
@@ -221,9 +216,9 @@ Ingénieure logicielle diplômée avec un background en finance et business. Exp
 %----------------------------------------------------------------------------------------
 \section{Compétences}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Compétences Techniques & \normalsize{MERN Stack, FastAPI, MySQL, HTML/CSS, Intelligence Artificielle, Git, Kotlin}\\
+Compétences Techniques & \normalsize{React.js, Next.js, HTML/CSS, API REST, Git, MERN Stack, FastAPI, MySQL, Kotlin}\\
 Langues & \normalsize{Anglais (courant), Français (courant), Arabe (natif)}\\
-Qualités & \normalsize{Leadership et gestion d'équipe, Vision technique-business, Orienté résultats et performance, Esprit d'amélioration continue}\\
+Qualités & \normalsize{Communication, travail d'équipe, apprentissage rapide, sens du produit}\\
 \end{tabularx}
 
 
