@@ -1,230 +1,382 @@
+
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
+% The MIT License (MIT)
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
-%	FONT
+% PACKAGES
 %----------------------------------------------------------------------------------------
 
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
+\usepackage{parskip}
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
-
-%tabularx environment
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
 \usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{7pt}{7pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-%for social icons
 \usepackage{fontawesome5}
 
-%debug page outer frames
-%\usepackage{showframe}
+%----------------------------------------------------------------------------------------
+% COLORS / LINKS
+%----------------------------------------------------------------------------------------
 
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{
+    colorlinks,
+    breaklinks,
+    urlcolor=linkcolour,
+    linkcolor=linkcolour
+}
 
-% job listing environments
+%----------------------------------------------------------------------------------------
+% SECTION FORMAT
+%----------------------------------------------------------------------------------------
+
+\titleformat{\section}
+    {\Large\scshape\raggedright}
+    {}
+    {0em}
+    {}
+    [\titlerule]
+
+\titlespacing{\section}{0pt}{7pt}{7pt}
+
+%----------------------------------------------------------------------------------------
+% JOB ENVIRONMENTS
+%----------------------------------------------------------------------------------------
+
 \newenvironment{jobshort}[2]
-    {
+{
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[2.75pt]
+    \textbf{#1} & \hfill & #2 \\[2.75pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-    }
-    {
+    \begin{itemize}[
+        nosep,
+        after=\strut,
+        leftmargin=1em,
+        itemsep=2pt
+    ]
+}
+{
     \end{itemize}
     \end{minipage}
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[2.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
-
-
+}
 
 %----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
+% BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
+
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
-%	TITLE
+% HEADER
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
+\begin{tabularx}{\linewidth}{@{}c@{}}
 
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Molka GHAMMAM} \\[5pt]
-\vspace{3pt}
-\href{https://github.com/molkw}{\raisebox{-0.05\height}\faGithub\ Molka-Ghammam} \ $|$ \ 
-\href{https://www.linkedin.com/in/molka-ghammam-560015226}{\raisebox{-0.05\height}\faLinkedin\ Molka Ghammam} \ $|$ \ 
-% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{ghammammolka185@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ ghammammolka185@gmail.com} \ $|$ \ 
-\href{tel:+216.51.389.023}{\raisebox{-0.05\height}\faMobile \ +216.51.389.023} \\
+\Huge{\textbf{Molka GHAMMAM}} \\[5pt]
+
+\Large{Développeuse Full Stack MERN -- Junior} \\[7pt]
+
+\href{https://github.com/molkaghammam}
+{\raisebox{-0.05\height}\faGithub\ GitHub}
+\ $|$ \ 
+\href{https://www.linkedin.com/in/molka-ghammam-560015226}
+{\raisebox{-0.05\height}\faLinkedin\ LinkedIn}
+\ $|$ \ 
+\href{mailto:ghammammolka185@gmail.com}
+{\raisebox{-0.05\height}\faEnvelope\ ghammammolka185@gmail.com}
+\ $|$ \ 
+\href{tel:+21651389023}
+{\raisebox{-0.05\height}\faMobile\ +216 51 389 023}
+
+\\[4pt]
+
+Mahdia, Tunisie -- Disponible immédiatement -- 100\% présentiel
+
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
+% PROFIL
 %----------------------------------------------------------------------------------------
-\vspace{12pt}
-%Interests/ Keywords/ Summary
-\section{Résumé}
-Ingénieure logicielle diplômée avec un background en finance et business. Expérience confirmée chez Tritux Group où j'ai développé un plugin IntelliJ IDEA intégrant l'intelligence artificielle. Reconnue pour mes compétences en leadership, ma capacité à mener des projets complexes et mon excellence académique. Dotée de solides aptitudes en communication et travail d'équipe, je recherche un poste où allier expertise technique et compréhension des enjeux métier.
 
-%Experience
-\section{Expérience Professionnelle}
+\vspace{8pt}
 
-\begin{jobshort}{Stage PFE | Tritux Group | Tunis}{Fév 2025 - Aoû 2025}
-\item Développer un plugin IntelliJ IDEA basé sur l'IA pour la génération automatique de documentation de projets, facilitant la reprise et la compréhension du code.
-\item Implémenter des fonctionnalités avancées incluant l'export Markdown, un système de Q\&A interactif et l'analyse contextuelle de projets existants.
-\end{jobshort}
+\section{Profil}
 
-\begin{jobshort}{Stage Ingénieur | Wind Consulting | Mahdia}{Juil 2024 - Aoû 2024}
-\item Développer une plateforme e-commerce fullstack 'Handmade' avec gestion de catalogue produits et système de commandes pour la promotion de l'artisanat tunisien.
-\item Concevoir et implémenter l'architecture complète (frontend/backend) utilisant la stack MERN (MongoDB, Express.js, React.js, Node.js) avec Sequelize pour la gestion de base de données.
-\end{jobshort}
+Ingénieure en génie logiciel diplômée de l'ESPRIT (2025), spécialisée en développement
+full stack JavaScript. J'ai conçu et développé plusieurs applications web avec
+React.js, Node.js, Express.js et MongoDB, ainsi que des APIs REST.
 
-\begin{jobshort}{Stage d'Immersion en entreprise | BH Bank | Mahdia}{Juil 2023 - Aoû 2023}
-\item Acquérir une expérience pratique des opérations bancaires (gestion de comptes, transactions, bulletins de versement, traitement de chèques) et des processus métier du secteur financier.
-\item Développer une compréhension approfondie des flux bancaires et des exigences réglementaires, compétences essentielles pour concevoir des solutions IT adaptées aux besoins du secteur financier.
-\end{jobshort}
+Mon projet le plus abouti, \textbf{CoMedic}, est une application web de gestion
+hospitalière développée avec la stack MERN. Le projet a été retenu par le client
+et par la faculté comme le meilleur projet de ma promotion. Lors de mon stage
+chez \textbf{Wind Consulting à Mahdia}, j'ai également développé une plateforme
+e-commerce en React.js, Node.js et Express.js avec une API REST.
 
-%Projects
+Résidente à Mahdia et disponible immédiatement, je recherche un poste junior
+où mettre mes compétences full stack au service de projets concrets et continuer
+à progresser au sein d'une équipe technique.
+
+%----------------------------------------------------------------------------------------
+% COMPETENCES TECHNIQUES
+%----------------------------------------------------------------------------------------
+
+\section{Compétences Techniques}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+
+\textbf{MERN Stack}
+&
+MongoDB, Express.js, React.js, Node.js
+\\[3pt]
+
+\textbf{MongoDB}
+&
+Modélisation de collections, requêtes, agrégations, Mongoose
+\\[3pt]
+
+\textbf{Express.js}
+&
+Routage, middlewares, gestion des erreurs, authentification
+\\[3pt]
+
+\textbf{React.js}
+&
+Composants fonctionnels, hooks, gestion d'état, consommation d'APIs,
+interfaces responsives
+\\[3pt]
+
+\textbf{Node.js}
+&
+Développement backend, APIs REST, traitement asynchrone
+\\[3pt]
+
+\textbf{Langages}
+&
+JavaScript (ES6+), TypeScript, Python, Java, PHP, C\#, SQL
+\\[3pt]
+
+\textbf{APIs}
+&
+Conception et consommation d'APIs REST, JSON, Postman,
+authentification par token
+\\[3pt]
+
+\textbf{Bases de données}
+&
+MongoDB, MySQL, PostgreSQL, Mongoose, Sequelize
+\\[3pt]
+
+\textbf{Front-end}
+&
+React.js, Next.js, Angular, HTML/CSS, Tailwind, Bootstrap
+\\[3pt]
+
+\textbf{Outils}
+&
+Git, GitHub, GitHub Actions, Docker, SonarQube, Postman
+\\[3pt]
+
+\textbf{Méthodes}
+&
+Agile / Scrum, revue de code, Jira, Trello, Notion
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% PROJETS
+%----------------------------------------------------------------------------------------
+
 \section{Projets}
 
-\begin{jobshort}{CodeScribe}{}
-\item Développé un plugin IntelliJ IDEA basé sur l'IA pour la génération automatique de documentation, l'analyse de code contextuelle et un système de Q\&A interactif facilitant la collaboration en équipe.
+%----------------------------------------------------------------------------------------
+% COMEDIC
+%----------------------------------------------------------------------------------------
+
+\begin{jobshort}{CoMedic -- Application web de gestion hospitalière}{Stack MERN}
+
+\item Développement d'une application web full stack pour un client hospitalier algérien
+avec React.js, Node.js, Express.js et MongoDB.
+
+\item Développement du front-end React.js : interfaces de consultation et de gestion
+des dossiers et données, composants réutilisables, navigation et gestion des états.
+
+\item Développement du back-end Node.js / Express.js : API REST, logique métier,
+gestion des rôles et droits d'accès, middlewares d'authentification et de gestion
+des erreurs.
+
+\item Modélisation de la base MongoDB, requêtes et agrégations pour les vues de synthèse.
+
+\item Recueil du besoin auprès du client, démonstrations et recette de bout en bout.
+
+\item Projet reconnu par le client et par la faculté comme le meilleur projet de la
+promotion pour son innovation et son impact.
+
 \end{jobshort}
+
 \vspace{-1pt}
-\begin{jobshort}{Handmade}{}
-\item Développé une plateforme e-commerce fullstack pour la promotion de l'artisanat tunisien avec gestion de catalogue produits et système de commandes utilisant la stack MERN.
+
+%----------------------------------------------------------------------------------------
+% SPORTIFY
+%----------------------------------------------------------------------------------------
+
+\begin{jobshort}{Sportify -- Plateforme de réservation de terrains sportifs}{Symfony -- Java}
+
+\item Conception d'une plateforme de réservation multi-disciplines avec gestion
+des terrains, créneaux horaires, conflits de réservation et profils utilisateurs.
+
+\item Projet sélectionné parmi les 10 meilleurs projets pour son impact et son innovation.
+
 \end{jobshort}
-\vspace{-1pt}
-\begin{jobshort}{MediColGes}{}
-\item Développé une plateforme de gestion hospitalière avec la stack MERN et pratiques DevOps, \href{https://drive.google.com/file/d/1gWNv6cd-rV3e9UC0t1IIyUFB63efAkBR/view}{sélectionné comme meilleur projet par le client algérien pour son innovation}.
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Expérience Professionnelle}
+
+%----------------------------------------------------------------------------------------
+% WIND
+%----------------------------------------------------------------------------------------
+
+\begin{jobshort}{Stage Développement Full Stack | Wind Consulting | Mahdia}{Juin 2024 -- Août 2024}
+
+\item Développement d'une plateforme e-commerce ``Handmade'' dédiée à la promotion
+de l'artisanat tunisien.
+
+\item Développement de l'interface en React.js : catalogue produits, fiches articles,
+panier, tunnel de commande et espace client.
+
+\item Développement du back-end Node.js / Express.js et conception d'une API REST
+pour la gestion des utilisateurs, produits, commandes et transactions.
+
+\item Modélisation et gestion de la base de données relationnelle avec Sequelize.
+
+\item Tests fonctionnels, corrections et préparation de la livraison.
+
 \end{jobshort}
 
 %----------------------------------------------------------------------------------------
-%	EDUCATION
+% TRITUX
 %----------------------------------------------------------------------------------------
-\vspace{-8pt}
-\section{Formation}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2020 - 2025 & Ingénieur en Informatique à \textbf{l'école d'ingénieurs Esprit} \\
 
-2016 - 2020 & Baccalauréat au \textbf{Lycée secondaire Rejiche Mahdia, Tunisie} \\
-\end{tabularx}
+\begin{jobshort}{Stage PFE -- Ingénieure Stagiaire | Tritux Group | Tunis}{Fév. 2025 -- Août 2025}
+
+\item Conception et développement de \textbf{Godscribe}, un plugin IntelliJ IDEA basé
+sur l'IA générative pour automatiser la documentation technique et faciliter
+la compréhension de projets logiciels.
+
+\item Développement d'une API REST avec Python / FastAPI consommée par le plugin.
+
+\item Intégration de modèles de langage pour l'analyse contextuelle du code et
+la génération d'explications.
+
+\item Travail en équipe sous Git : branches, pull requests et revues de code.
+
+\item Rédaction de documentation technique et recette auprès des utilisateurs internes.
+
+\end{jobshort}
 
 %----------------------------------------------------------------------------------------
-%	PUBLICATIONS
+% BH BANK
 %----------------------------------------------------------------------------------------
-% \section{Publications}
-% \begin{refsection}[citations.bib]
-% \nocite{*}
-% \printbibliography[heading=none]
-% \end{refsection}
+
+\begin{jobshort}{Stage d'Immersion en Entreprise | BH Bank | Mahdia}{Juil. 2023 -- Août 2023}
+
+\item Découverte des systèmes logiciels bancaires et des processus associés.
+
+\item Participation aux travaux de l'équipe sur la sécurité des données et
+la performance des systèmes.
+
+\item Contribution à l'optimisation d'interfaces utilisateur.
+
+\end{jobshort}
 
 %----------------------------------------------------------------------------------------
-%	SKILLS
+% CERTIFICATIONS
 %----------------------------------------------------------------------------------------
-\section{Compétences}
+
+\section{Certifications}
+
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Compétences Techniques & \normalsize{MERN Stack, FastAPI, MySQL, HTML/CSS, Intelligence Artificielle, Git, Kotlin}\\
-Langues & \normalsize{Anglais (courant), Français (courant), Arabe (natif)}\\
-Qualités & \normalsize{Leadership et gestion d'équipe, Vision technique-business, Orienté résultats et performance, Esprit d'amélioration continue}\\
+
+\textbf{Meta Front-End Developer Professional Certificate}
+&
+En cours -- React, JavaScript ES6+, interfaces responsives,
+architecture par composants
+\\[4pt]
+
+\textbf{AWS Certified Cloud Practitioner}
+&
+En cours -- Fondamentaux du cloud, EC2, S3, IAM, sécurité et architecture
+
 \end{tabularx}
 
+%----------------------------------------------------------------------------------------
+% FORMATION
+%----------------------------------------------------------------------------------------
+
+\section{Formation}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+
+2020 -- 2025
+&
+\textbf{Diplôme National d'Ingénieur en Informatique} --
+ESPRIT, École Supérieure Privée d'Ingénierie et de Technologies, Tunis
+\\[4pt]
+
+2017 -- 2020
+&
+\textbf{Baccalauréat, Sciences Expérimentales} --
+Lycée de Rejiche, Mahdia
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% LANGUES
+%----------------------------------------------------------------------------------------
+
+\section{Langues}
+
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+
+\textbf{Arabe}
+&
+Langue maternelle
+\\[2pt]
+
+\textbf{Français}
+&
+B2
+\\[2pt]
+
+\textbf{Anglais}
+&
+B2
+\\[2pt]
+
+\textbf{Allemand}
+&
+A2
+
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% END DOCUMENT
+%----------------------------------------------------------------------------------------
 
 \end{document}
+```
